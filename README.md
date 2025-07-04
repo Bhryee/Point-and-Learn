@@ -100,10 +100,10 @@ Diagram picture
 <details open>
 <summary><h1>Product Status</h1></summary>
   
-<h3>Product Screenshots</h3></br>
+<h3><summary>Product Screenshots</h3></br>
 
-<h3>Sprint Review</h3></br>
+<h3><summary>Sprint Review</h3></br>
 
-<h3>Feedback</h3></br>
+<h3><summary>Feedback</h3></br>
 
 </details>
