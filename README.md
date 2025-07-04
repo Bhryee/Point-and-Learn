@@ -78,6 +78,7 @@ Point and Learn is an interactive mobile application designed to make language l
 </br>
 # Product Backlog URL
 
+
 <details open>
 <summary><h1>Sprints</h1></summary>
   
@@ -87,4 +88,10 @@ Point and Learn is an interactive mobile application designed to make language l
 
 <h3>Sprint 3</h3></br>
 
+
+</details>
+
+<details open>
+<summary><h1>App Map</h1></summary> 
+Diagram picture
 </details>
