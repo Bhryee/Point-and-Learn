@@ -16,7 +16,7 @@
 # Product Logo
 
 # Product Description
-An interactive application that allows the user to learn the foreign language equivalents of objects by introducing them through the camera.</br>
+An interactive application that allows the user to learn the foreign language equivalents of objects by introducing them through the camera.</br></br>
 Point and Learn is an interactive mobile application designed to make language learning intuitive and fun. By simply pointing the device’s camera at everyday objects, users can instantly discover their names in a foreign language. The app not only displays the translated word but also offers pronunciation support, example sentences, and the ability to save favorite words. With features like offline mode, daily word reminders, and gamified quizzes, Point and Learn helps learners of all ages build vocabulary in a natural, engaging way—right from their surroundings.
 
 <details open>
