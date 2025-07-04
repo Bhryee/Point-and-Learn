@@ -1,5 +1,5 @@
 # Team Name
-Group 167
+**Group 167**
 
 # Team Members
 |                       | Name              | Title          | Socials |
@@ -11,6 +11,17 @@ Group 167
 | <img src="./images/yusuf.jpg" width="100"/> | Yusuf Mıraz Esen | Developer | [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yusufmesen?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) |
 
 # Product Name
-## Point-and-Learn
-Point-and-Learn
+**Point-and-Learn**
+
+# Product Logo
+
+# Product Description
 An interactive application that allows the user to learn the foreign language equivalents of objects by introducing them through the camera.
+
+# Product Features
+
+# Target Audience
+
+# Marketing Plan
+
+# Product Backlog URL???
