@@ -20,6 +20,21 @@ An interactive application that allows the user to learn the foreign language eq
 
 # Product Features
 
+<details open>
+<summary><h1>Product Features</h1></summary>
+<h3>1. Object Detection via Camera</h3></br>
+<summary>When the user points the camera at an object, the app automatically identifies it.</br>
+<summary>Libraries like TensorFlow Lite, MediaPipe, or Google ML Kit can be used for visual recognition.</br>
+  
+<h2>Target Audience</h2></br>
+<h2>Target Audience</h2></br>
+<h2>Target Audience</h2></br>
+<h2>Target Audience</h2></br> 
+<h2>Target Audience</h2></br>
+  
+<h2>Rating and Review System</h2></br>
+</details>
+
 # Target Audience
 
 # Marketing Plan
