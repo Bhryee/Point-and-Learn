@@ -24,7 +24,11 @@ Point and Learn is an interactive mobile application designed to make language l
 <h3>1. Object Detection via Camera</h3></br>
 <summary>When the user points the camera at an object, the app automatically identifies it.</br>
 <summary>Libraries like TensorFlow Lite, MediaPipe, or Google ML Kit can be used for visual recognition.</br>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 698cf482420b82f48ebeb611119a039016056e3d
 <h3>2. Instant Translation</h3></br>
 <summary>The identified object is translated and displayed in the target foreign language (e.g., English).</br>
 <summary>Can support Turkish to English or multiple language pairs.</br>
@@ -66,7 +70,11 @@ Point and Learn is an interactive mobile application designed to make language l
 <h3>12. User Feedback and Corrections</h3></br>
 <summary>Users can report wrong recognitions and suggest corrections.</br>
 <summary>Helpful for improving the app’s object recognition accuracy over time.</br>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 698cf482420b82f48ebeb611119a039016056e3d
 </details>
 
 # Target Audience
@@ -81,7 +89,11 @@ Point and Learn is an interactive mobile application designed to make language l
 
 <details open>
 <summary><h1>Sprints</h1></summary>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 698cf482420b82f48ebeb611119a039016056e3d
 <h3>Sprint 1</h3></br>
 
 <h3>Sprint 2</h3></br>
@@ -99,7 +111,11 @@ Diagram picture
 
 <details open>
 <summary><h1>Product Status</h1></summary>
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 698cf482420b82f48ebeb611119a039016056e3d
 <h3><summary>Product Screenshots</h3></br>
 
 <h3><summary>Sprint Review</h3></br>
