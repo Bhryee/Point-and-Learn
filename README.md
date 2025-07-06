@@ -104,6 +104,8 @@ To all learning enthusiasts who want to embark on a language learning journey
 
 <details open>
 <summary><h2>Project Managements</h2></summary>
+  
+![project management](https://github.com/user-attachments/assets/2fc8f6f9-4613-4e82-9b2a-37bfbd85424a)
 
 </details>
 
