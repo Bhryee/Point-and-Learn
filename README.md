@@ -129,7 +129,18 @@ To all learning enthusiasts who want to embark on a language learning journey
 
 100 Points to be completed for Sprint 1 ?????
 
+<details open>
 <h3>Daily Scrum</h3>
+
+![WhatsApp Image 2025-07-06 at 20 46 10(1)](https://github.com/user-attachments/assets/36368b6b-6d43-432a-b89b-b88d774002ef)
+
+![WhatsApp Image 2025-07-06 at 20 46 10](https://github.com/user-attachments/assets/8ec159b5-156d-4226-b9fb-9c188cb66721)
+
+![WhatsApp Image 2025-07-06 at 20 46 09](https://github.com/user-attachments/assets/4dc5a8a0-c7bf-4980-b21a-f6f12bf67e40)
+
+![WhatsApp Image 2025-07-06 at 20 46 10(2)](https://github.com/user-attachments/assets/6483dc61-294e-4829-b78f-77e74b72541e)
+
+</details>
 
 <h3>Product Backlog URL</h3>
 
@@ -137,7 +148,7 @@ To all learning enthusiasts who want to embark on a language learning journey
 
 - Sprint 1 mainly focused on team members getting to know each other, project planning, idea generation, and design. Although our daily workloads varied, we managed to establish a communication method that worked for everyone and handled the process well overall.
 - Daily communication was primarily maintained through WhatsApp, and meetings were scheduled based on our daily availability.
-- For the schedule and burndown chart, we initially used Miro, Trello, and Excel. These tools were collaboratively managed under the guidance of Bahriye İşgör and Yusuf Mıraz Esen.
+- For the schedule and burndown chart, we initially used Miro, Trello, and Excel. These tools were collaboratively managed under the guidance of İkra Nur Hincal, Bahriye İşgör and Yusuf Mıraz Esen.
 - The project scoring system was jointly determined according to our objectives.
 - The application idea proposed by team member Bahriye İşgör was accepted.
 - While determining the project name, logo, and application features, the aim was to ensure accessibility, ease of use, attractiveness, and encouragement for people of all ages; the project logo was designed by İkra Nur Hıncal using Canva.
