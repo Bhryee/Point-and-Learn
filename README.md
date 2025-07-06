@@ -126,7 +126,15 @@ To all learning enthusiasts who want to embark on a language learning journey
 
 <h3>Scoring Logic</h3>
 
-100 Points to be completed for Sprint 1 ?????
+The overall project workload was distributed with a total target of 400 points.
+
+- Sprint 1 (Ideation, Planning & UI/UX Design): Assigned 100 points, reflecting its focus on conceptual development and foundational planning activities.
+- Sprint 2 (Development & AI Integration): Allocated 150 points, due to its emphasis on coding, implementation of AI models, and a more intensive workflow.
+- Sprint 3 (Review & Finalization): Also assigned 150 points, as it covers the comprehensive review of all components, debugging, and the preparation of finalized project deliverables.
+
+This distribution ensured a balanced and goal-oriented project management approach across all sprints.
+
+This distribution ensured a balanced and goal-oriented project management approach across all sprints.
 
 <details open>
 <summary><h2>Daily Scrum Examples</h2></summary>
