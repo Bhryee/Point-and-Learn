@@ -99,6 +99,30 @@ Point and Learn is an interactive mobile application designed to make language l
 <details open>
 <summary><h1>Sprints 1</h1></summary>
 
+<details open>
+<summary><h2>App Screenshots</h2></summary>
+
+<h3>Login Page</h3>
+
+![login_page](https://github.com/user-attachments/assets/f0261dff-1227-4f03-89ea-d339d8930d29)
+
+<h3>Home Page</h3>
+
+![home_page](https://github.com/user-attachments/assets/a226a141-2773-4bba-8ba6-ea3724195ca4)
+
+<h3>Menu and Settings Pages</h3>
+
+![menu](https://github.com/user-attachments/assets/2c9059a9-b154-4445-b992-67470ed15359)
+
+<h3>Example Pages</h3>
+
+![example_page1](https://github.com/user-attachments/assets/9d15f2f0-229e-48a6-a6c8-83fdc73b2d27)
+![example_page2](https://github.com/user-attachments/assets/7618d4a7-f07d-45bc-b051-504871006e6d)
+![example_page3](https://github.com/user-attachments/assets/b67b0b04-0e55-4789-a4ba-7330d6a848d1)
+
+</details>
+
+
 </details>
 
 <details open>
