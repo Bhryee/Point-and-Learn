@@ -122,6 +122,29 @@ Point and Learn is an interactive mobile application designed to make language l
 
 </details>
 
+<details open>
+<summary><h2>Project Managements</h2></summary>
+
+</details>
+
+<details open>
+<summary><h2>Burndown Chart</h2></summary>
+
+</details>
+
+<details open>
+<summary><h2>About Sprint 1</h2></summary>
+
+The team name was decided, tasks were assigned to team members, and the project idea was finalized.
+Our daily scrum meetings were conducted via WhatsApp and Google Meet.
+Miro and Trello were used for project management.
+The logo was designed with the help of Canva.
+The README section on GitHub has been started.
+For UI designs (login page, home page, menu and settings pages, and sample application screens), Figma was used; care was taken to ensure that color selections and designs matched the logo.
+To encourage learning and make the app more professional, English language and email-based login were preferred.
+
+</details>
+
 
 </details>
 
