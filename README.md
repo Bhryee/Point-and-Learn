@@ -110,6 +110,9 @@ To all learning enthusiasts who want to embark on a language learning journey
 
 <details open>
 <summary><h2>Burndown Chart</h2></summary>
+  
+![bd1](https://github.com/user-attachments/assets/f6e4b8d9-3a07-46bc-8758-4bed1395fc8c)
+![bd3](https://github.com/user-attachments/assets/b51e7863-4660-431b-b7ff-2bd3c41b4a9a)
 
 </details>
 
