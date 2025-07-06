@@ -144,6 +144,8 @@ To all learning enthusiasts who want to embark on a language learning journey
 
 <h3>Product Backlog URL</h3>
 
+[Product Backlog URL](https://miro.com/app/board/uXjVIhNALLE=/?share_link_id=756475408743)
+
 <h3>Sprint Review</h3>
 
 - Sprint 1 mainly focused on team members getting to know each other, project planning, idea generation, and design. Although our daily workloads varied, we managed to establish a communication method that worked for everyone and handled the process well overall.
