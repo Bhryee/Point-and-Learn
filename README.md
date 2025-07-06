@@ -158,7 +158,7 @@ Point and Learn is an interactive mobile application designed to make language l
 - For the schedule and burndown chart, we initially used Miro, Trello, and Excel. These tools were collaboratively managed under the guidance of Bahriye İşgör and Yusuf Mıraz Esen.
 - The project scoring system was jointly determined according to our objectives.
 - The application idea proposed by team member Bahriye İşgör was accepted.
-- While determining the project name, logo, and application features, we aimed for accessibility, ease of use, attractiveness, and motivational aspects suitable for people of all ages.
+- While determining the project name, logo, and application features, the aim was to ensure accessibility, ease of use, attractiveness, and encouragement for people of all ages; the project logo was designed by İkra Nur Hıncal using Canva.
 - The mobile app UI design in Figma and the GitHub README writing were initiated by İkra Nur Hıncal. 
 - The mobile app frontend development using Flutter, and the dataset research using Roboflow and Kaggle were initiated by Bahriye İşgör.
 - The model selection for the mobile app, as well as backend integration research (including TensorFlow Lite, Firebase, YOLO, and FastAPI) were initiated by Serkan Özdemir, Bahriye İşgör, and Vecih Hammour.
