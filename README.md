@@ -142,9 +142,9 @@ This distribution ensured a balanced and goal-oriented project management approa
 <details open>
 <summary><h2>Daily Scrum Examples</h2></summary>
 
-![ds1](https://github.com/user-attachments/assets/44aea617-f59b-449e-914d-5a2c02ae3125)
-![ds2](https://github.com/user-attachments/assets/2f4f6e50-a9bf-4d1f-afa9-7c8d29c5e2bf)
-![ds3](https://github.com/user-attachments/assets/05d9916c-4676-4ac3-8c2d-fa129fda7be1)
+![ds1_1](https://github.com/user-attachments/assets/a11878af-6d10-439e-bb44-822f7516f3dd)
+![ds2_2](https://github.com/user-attachments/assets/28f195cb-f16c-40f9-a397-f4519466fff6)
+![ds3_3](https://github.com/user-attachments/assets/5c01779e-ec7a-4fa9-a6ca-a367b5a11772)
 
 </details>
 
