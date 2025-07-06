@@ -130,15 +130,11 @@ To all learning enthusiasts who want to embark on a language learning journey
 100 Points to be completed for Sprint 1 ?????
 
 <details open>
-<h3>Daily Scrum</h3>
+<summary><h2>Daily Scrum Examples</h2></summary>
 
-![WhatsApp Image 2025-07-06 at 20 46 10(1)](https://github.com/user-attachments/assets/36368b6b-6d43-432a-b89b-b88d774002ef)
-
-![WhatsApp Image 2025-07-06 at 20 46 10](https://github.com/user-attachments/assets/8ec159b5-156d-4226-b9fb-9c188cb66721)
-
-![WhatsApp Image 2025-07-06 at 20 46 09](https://github.com/user-attachments/assets/4dc5a8a0-c7bf-4980-b21a-f6f12bf67e40)
-
-![WhatsApp Image 2025-07-06 at 20 46 10(2)](https://github.com/user-attachments/assets/6483dc61-294e-4829-b78f-77e74b72541e)
+![ds1](https://github.com/user-attachments/assets/44aea617-f59b-449e-914d-5a2c02ae3125)
+![ds2](https://github.com/user-attachments/assets/2f4f6e50-a9bf-4d1f-afa9-7c8d29c5e2bf)
+![ds3](https://github.com/user-attachments/assets/05d9916c-4676-4ac3-8c2d-fa129fda7be1)
 
 </details>
 
