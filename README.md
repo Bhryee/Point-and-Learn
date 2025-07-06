@@ -143,6 +143,27 @@ Point and Learn is an interactive mobile application designed to make language l
 - For UI designs (login page, home page, menu and settings pages, and sample application screens), Figma was used; care was taken to ensure that color selections and designs matched the logo.</br>
 - To encourage learning and make the app more professional, English language and email-based login were preferred.</br>
 
+<h3>Scoring Logic</h3>
+
+100 Points to be completed for Sprint 1 ?????
+
+<h3>Daily Scrum</h3>
+
+<h3>Product Backlog URL</h3>
+
+<h3>Sprint Review</h3>
+
+- Sprint 1 mainly focused on team members getting to know each other, project planning, idea generation, and design. Although our daily workloads varied, we managed to establish a communication method that worked for everyone and handled the process well overall.
+- Daily communication was primarily maintained through WhatsApp, and meetings were scheduled based on our daily availability.
+- For the schedule and burndown chart, we initially used Miro, Trello, and Excel. These tools were collaboratively managed under the guidance of Bahriye İşgör and Yusuf Mıraz Esen.
+- The project scoring system was jointly determined according to our objectives.
+- The application idea proposed by team member Bahriye İşgör was accepted.
+- While determining the project name, logo, and application features, we aimed for accessibility, ease of use, attractiveness, and motivational aspects suitable for people of all ages.
+- The mobile app UI design in Figma and the GitHub README writing were initiated by İkra Nur Hıncal. 
+- The mobile app frontend development using Flutter, and the dataset research using Roboflow and Kaggle were initiated by Bahriye İşgör.
+- The model selection for the mobile app, as well as backend integration research (including TensorFlow Lite, Firebase, YOLO, and FastAPI) were initiated by Serkan Özdemir, Bahriye İşgör, and Vecih Hammour.
+
+  
 </details>
 
 
@@ -178,6 +199,7 @@ Diagram picture
 <h3><summary>Feedback</h3></br>
 
 </details>
+
 
 
 <details open>
