@@ -90,7 +90,7 @@ To all learning enthusiasts who want to embark on a language learning journey
 
 <h2>Scoring Logic</h2>
 
-Estimated story points to be completed for Sprint 1: 100
+<h4>Estimated story points to be completed for Sprint 1: 100</h4>
 
 The overall project workload was distributed with a total target of 400 points.
 
