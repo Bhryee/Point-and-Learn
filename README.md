@@ -182,8 +182,6 @@ This distribution ensured a balanced and goal-oriented project management approa
 </details>
 
 
-</details>
-
 <details open>
 <summary><h1>Sprints 2</h1></summary>
 </details>
@@ -192,6 +190,7 @@ This distribution ensured a balanced and goal-oriented project management approa
 <summary><h1>Sprints 3</h1></summary>
 </details>
 
+</details>
 
 <details open>
 <summary><h1>Tools Used</h1></summary>
