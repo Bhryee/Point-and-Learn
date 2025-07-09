@@ -78,8 +78,64 @@ To all learning enthusiasts who want to embark on a language learning journey
 <details open>
 <summary><h1>Sprints 1</h1></summary>
 
+<h2>Sprint 1 Notes</h2>
+
+- The team name was decided, tasks were assigned to team members, and the project idea was finalized.</br>
+- Our daily scrum meetings were conducted via WhatsApp and Google Meet.</br>
+- Miro and Trello were used for project management.</br>
+- The logo was designed with the help of Canva.</br>
+- The README section on GitHub has been started.</br>
+- For UI designs (login page, home page, menu and settings pages, and sample application screens), Figma was used; care was taken to ensure that color selections and designs matched the logo.</br>
+- To encourage learning and make the app more professional, English language and email-based login were preferred.</br>
+
+<h2>Scoring Logic</h2>
+
+Estimated story points to be completed for Sprint 1: 100
+
+The overall project workload was distributed with a total target of 400 points.
+
+- Sprint 1 (Ideation, Planning & UI/UX Design): Assigned 100 points, reflecting its focus on conceptual development and foundational planning activities.
+- Sprint 2 (Development & AI Integration): Allocated 150 points, due to its emphasis on coding, implementation of AI models, and a more intensive workflow.
+- Sprint 3 (Review & Finalization): Also assigned 150 points, as it covers the comprehensive review of all components, debugging, and the preparation of finalized project deliverables.
+
+This distribution ensured a balanced and goal-oriented project management approach across all sprints.
+
 <details open>
-<summary><h2>App Screenshots</h2></summary>
+<summary><h2>Daily Scrum Examples</h2></summary>
+
+![ds1_1](https://github.com/user-attachments/assets/a11878af-6d10-439e-bb44-822f7516f3dd)
+![ds2_2](https://github.com/user-attachments/assets/28f195cb-f16c-40f9-a397-f4519466fff6)
+![ds3_3](https://github.com/user-attachments/assets/5c01779e-ec7a-4fa9-a6ca-a367b5a11772)
+
+</details>
+
+<details open>
+<summary><h2>Sprint 1 Board Screenshots</h2></summary>
+
+<details open>
+<summary><h2>Project Managements</h2></summary>
+  
+![project management](https://github.com/user-attachments/assets/2fc8f6f9-4613-4e82-9b2a-37bfbd85424a)
+
+</details>
+
+<details open>
+<summary><h2>Burndown Chart</h2></summary>
+  
+![bd1](https://github.com/user-attachments/assets/f6e4b8d9-3a07-46bc-8758-4bed1395fc8c)
+![bd3](https://github.com/user-attachments/assets/b51e7863-4660-431b-b7ff-2bd3c41b4a9a)
+
+<h3>Product Backlog URL</h3>
+
+[Product Backlog URL](https://miro.com/app/board/uXjVIhNALLE=/?share_link_id=756475408743)
+
+</details>
+
+</details>
+
+
+<details open>
+<summary><h2>Product Status: App Screenshots</h2></summary>
 
 <h3>Login Page</h3>
 
@@ -101,58 +157,8 @@ To all learning enthusiasts who want to embark on a language learning journey
 
 </details>
 
-<details open>
-<summary><h2>Project Managements</h2></summary>
-  
-![project management](https://github.com/user-attachments/assets/2fc8f6f9-4613-4e82-9b2a-37bfbd85424a)
 
-</details>
-
-<details open>
-<summary><h2>Burndown Chart</h2></summary>
-  
-![bd1](https://github.com/user-attachments/assets/f6e4b8d9-3a07-46bc-8758-4bed1395fc8c)
-![bd3](https://github.com/user-attachments/assets/b51e7863-4660-431b-b7ff-2bd3c41b4a9a)
-
-</details>
-
-<details open>
-<summary><h2>About Sprint 1</h2></summary>
-
-- The team name was decided, tasks were assigned to team members, and the project idea was finalized.</br>
-- Our daily scrum meetings were conducted via WhatsApp and Google Meet.</br>
-- Miro and Trello were used for project management.</br>
-- The logo was designed with the help of Canva.</br>
-- The README section on GitHub has been started.</br>
-- For UI designs (login page, home page, menu and settings pages, and sample application screens), Figma was used; care was taken to ensure that color selections and designs matched the logo.</br>
-- To encourage learning and make the app more professional, English language and email-based login were preferred.</br>
-
-<h3>Scoring Logic</h3>
-
-The overall project workload was distributed with a total target of 400 points.
-
-- Sprint 1 (Ideation, Planning & UI/UX Design): Assigned 100 points, reflecting its focus on conceptual development and foundational planning activities.
-- Sprint 2 (Development & AI Integration): Allocated 150 points, due to its emphasis on coding, implementation of AI models, and a more intensive workflow.
-- Sprint 3 (Review & Finalization): Also assigned 150 points, as it covers the comprehensive review of all components, debugging, and the preparation of finalized project deliverables.
-
-This distribution ensured a balanced and goal-oriented project management approach across all sprints.
-
-This distribution ensured a balanced and goal-oriented project management approach across all sprints.
-
-<details open>
-<summary><h2>Daily Scrum Examples</h2></summary>
-
-![ds1_1](https://github.com/user-attachments/assets/a11878af-6d10-439e-bb44-822f7516f3dd)
-![ds2_2](https://github.com/user-attachments/assets/28f195cb-f16c-40f9-a397-f4519466fff6)
-![ds3_3](https://github.com/user-attachments/assets/5c01779e-ec7a-4fa9-a6ca-a367b5a11772)
-
-</details>
-
-<h3>Product Backlog URL</h3>
-
-[Product Backlog URL](https://miro.com/app/board/uXjVIhNALLE=/?share_link_id=756475408743)
-
-<h3>Sprint Review</h3>
+<h2>Sprint Review</h2>
 
 - Sprint 1 mainly focused on team members getting to know each other, project planning, idea generation, and design. Although our daily workloads varied, we managed to establish a communication method that worked for everyone and handled the process well overall.
 - Daily communication was primarily maintained through WhatsApp, and meetings were scheduled based on our daily availability.
@@ -164,7 +170,17 @@ This distribution ensured a balanced and goal-oriented project management approa
 - The mobile app frontend development using Flutter, and the dataset research using Roboflow and Kaggle were initiated by Bahriye İşgör.
 - The model selection for the mobile app, as well as backend integration research (including TensorFlow Lite, Firebase, YOLO, and FastAPI) were initiated by Serkan Özdemir, Bahriye İşgör, and Vecih Hammour.
 
+<h2>Sprint Retrospective</h2>
+
+- Sprint Retrospective: The user interface design was reviewed on Figma; sections to be updated (e.g., Menu Page, Settings Page, Profile Page, Example Pages) and new screens to be added were identified.
+- The updates to be made on the frontend side, developed using Flutter, were defined.
+- Coding tasks were distributed among team members.
+- Firebase was selected for backend development and data management.
+- Roboflow and Kaggle platforms were chosen for visual dataset research.
+- TensorFlow Lite was selected for the development of the artificial intelligence module.
+
 </details>
+
 
 </details>
 
@@ -174,8 +190,6 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <details open>
 <summary><h1>Sprints 3</h1></summary>
-</details>
-
 </details>
 
 
