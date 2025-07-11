@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'package:point_and_learn/screen/camera.dart';
-import 'package:point_and_learn/screen/profile.dart';
-import 'package:point_and_learn/screen/education_result.dart';
+import 'package:point_and_learn/screen/camera_education.dart';
+import 'package:point_and_learn/screen/home_education.dart';
+import 'package:point_and_learn/screen/sentence_education.dart';
+import 'package:point_and_learn/screen/settings.dart';
 
 class NavigationsScreen extends StatefulWidget {
   const NavigationsScreen({super.key});
@@ -12,22 +13,27 @@ class NavigationsScreen extends StatefulWidget {
 }
 
 class _NavigationsScreenState extends State<NavigationsScreen> {
-  late PageController pageController;
-  int _currentIndex = 0;
+  int _selectedIndex = 0;
   List<CameraDescription> cameras = [];
   bool camerasLoaded = false;
+
+
+  late List<Widget> _pages;
 
   @override
   void initState() {
     super.initState();
-    pageController = PageController();
     _loadCameras();
+    _initializePages();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    pageController.dispose();
+  void _initializePages() {
+    _pages = [
+      HomeEducationPage(),
+      HomeEducationPage(),
+      HomeEducationPage(),
+      SettingsPage(),
+    ];
   }
 
   Future<void> _loadCameras() async {
@@ -44,107 +50,171 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
     }
   }
 
-  onPageChanged(int page) {
+  void _onItemTapped(int index) {
     setState(() {
-      _currentIndex = page;
+      _selectedIndex = index;
     });
-  }
-
-  navigationTapped(int page) {
-    pageController.jumpToPage(page);
+    Navigator.pop(context);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      bottomNavigationBar: Container(
-        child: BottomNavigationBar(
-          backgroundColor: Theme.of(context).colorScheme.surface,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: const Color(0xFF215969),
-          unselectedItemColor: Colors.grey,
-          showSelectedLabels: true,
-          showUnselectedLabels: true,
-          currentIndex: _currentIndex,
-          onTap: navigationTapped,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.camera_alt),
-              label: 'Camera',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'Education',
-            ),
-          ],
+      backgroundColor: Colors.grey.shade100,
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF1E183E),
+        iconTheme: IconThemeData(color: Colors.white),
+        title: Text(
+          _getPageTitle(),
+          style: TextStyle(color: Colors.white),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.search, color: Colors.white),
+            onPressed: () {
+            },
+          ),
+        ],
       ),
-      body: PageView(
-        controller: pageController,
-        onPageChanged: onPageChanged,
+      drawer: _buildDrawer(),
+      body: _pages[_selectedIndex],
+    );
+  }
+
+  String _getPageTitle() {
+    switch (_selectedIndex) {
+      case 0:
+        return 'Home';
+      case 1:
+        return 'Recent';
+      case 2:
+        return 'Favorites';
+      case 3:
+        return 'Settings';
+      default:
+        return 'Point&Learn';
+    }
+  }
+
+  Widget _buildDrawer() {
+    return Drawer(
+      backgroundColor: const Color(0xFF1E183E),
+      child: Column(
         children: [
-          ProfileScreen(),
-          camerasLoaded
-              ? (cameras.isNotEmpty
-              ? Camera(camera: cameras.first)
-              : _buildNoCameraScreen())
-              : _buildLoadingScreen(),
-          EducationResultScreen(),
+
+          Container(
+            height: 240,
+            width: double.infinity,
+            color: const Color(0xFF1E183E),
+            child: Column(
+              children: [
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+
+                      CircleAvatar(
+                        radius: 24,
+                        backgroundImage: AssetImage('media/profile.png'), // Profil fotoğrafı dosyan
+                        backgroundColor: Colors.grey.shade300,
+                      ),
+
+                      Text(
+                        "Help",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
+                SizedBox(
+                  width: 80,
+                  height: 80,
+                  child: Image.asset('media/logo.png'),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  "Menu",
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+
+          Expanded(
+            child: ListView(
+              padding: EdgeInsets.zero,
+              children: [
+                _buildDrawerItem(
+                  icon: Icons.home,
+                  title: 'Home',
+                  index: 0,
+                ),
+                _buildDrawerItem(
+                  icon: Icons.recent_actors,
+                  title: 'Recent',
+                  index: 1,
+                ),
+                _buildDrawerItem(
+                  icon: Icons.favorite,
+                  title: 'Favorites',
+                  index: 2,
+                ),
+                _buildDrawerItem(
+                  icon: Icons.settings,
+                  title: 'Settings',
+                  index: 3,
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildLoadingScreen() {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(
-              color: const Color(0xFF215969),
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Kamera yükleniyor...',
-              style: TextStyle(color: Colors.white, fontSize: 16),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  Widget _buildDrawerItem({
+    required IconData icon,
+    required String title,
+    required int index,
+  }) {
+    bool isSelected = _selectedIndex == index;
 
-  Widget _buildNoCameraScreen() {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.camera_alt_outlined,
-              size: 100,
-              color: Colors.grey,
-            ),
-            SizedBox(height: 20),
-            Text(
-              'Kamera bulunamadı',
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Lütfen kamera izinlerini kontrol edin',
-              style: TextStyle(color: Colors.grey, fontSize: 14),
-            ),
-          ],
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+      decoration: BoxDecoration(
+        color: isSelected ? Colors.white.withOpacity(0.1) : Colors.transparent,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: ListTile(
+        leading: Icon(
+          icon,
+          color: isSelected ? Colors.white : Colors.grey.shade300,
         ),
+        title: Text(
+          title,
+          style: TextStyle(
+            color: isSelected ? Colors.white : Colors.grey.shade300,
+            fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+          ),
+        ),
+        trailing: Icon(
+          Icons.arrow_forward_ios,
+          color: isSelected ? Colors.white : Colors.grey.shade300,
+          size: 16,
+        ),
+        onTap: () => _onItemTapped(index),
       ),
     );
   }

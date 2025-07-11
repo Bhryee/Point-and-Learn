@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:point_and_learn/Widget/navigation.dart';
-import 'package:point_and_learn/screen/camera.dart';
+import 'package:point_and_learn/screen/success.dart';
+import 'package:point_and_learn/screen/camera_education.dart';
 import 'package:point_and_learn/screen/login.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -38,7 +39,7 @@ class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFF1E183E),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
@@ -49,28 +50,27 @@ class _SignupScreenState extends State<SignupScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Logo veya resim için alan
+
                 SizedBox(
-                  width: 200,
-                  height: 150,
+                  width: 150,
+                  height: 100,
                   child: Image.asset(
-                    'images/sign-up.png',
+                    'media/logo.png',
                     fit: BoxFit.contain,
                   ),
                 ),
                 SizedBox(height: 20),
 
-                // Başlık
+
                 Text(
-                  "Yeni hesap oluşturun",
-                  style: TextStyle(fontSize: 15, color: Colors.grey),
+                  "Profil fotoğrafı seçiniz",
+                  style: TextStyle(fontSize: 15, color: Colors.white),
                 ),
                 SizedBox(height: 20),
 
-                // Profile Picture
+
                 InkWell(
                   onTap: () {
-                    // Resim seçme özelliği kaldırıldı
                     print("Profile picture tapped");
                   },
                   child: CircleAvatar(
@@ -102,11 +102,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 Textfield(passwordConfirme, Icons.lock, 'Şifre Tekrar',
                     passwordConfirme_F,
                     obscureText: true),
-                SizedBox(height: 10),
-
-                // Bio field
-                Textfield(bio, Icons.abc, 'Bio', bio_F),
-                SizedBox(height: 20),
+                SizedBox(height: 30),
 
                 // Signup button
                 Signup(),
@@ -128,7 +124,8 @@ class _SignupScreenState extends State<SignupScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Zaten hesabın var mı? '),
+          Text('Zaten hesabın var mı? ', style: TextStyle(color: Colors.grey.shade300),),
+
           GestureDetector(
             onTap: () {
               // Login ekranına git
@@ -142,10 +139,10 @@ class _SignupScreenState extends State<SignupScreen> {
             child: Text(
               'Giriş yap',
               style: TextStyle(
-                  color: const Color(0xFF215969),
+                  color: const Color(0xFF4A90E2),
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.underline,
-                  decorationColor: const Color(0xFF215969)),
+                  decorationColor: const Color(0xFF4A90E2)),
             ),
           )
         ],
@@ -158,7 +155,6 @@ class _SignupScreenState extends State<SignupScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: InkWell(
         onTap: () {
-          // Kayıt bilgilerini yazdır
           print("Signup button tapped");
           print("Username: ${username.text}");
           print("Email: ${email.text}");
@@ -166,11 +162,10 @@ class _SignupScreenState extends State<SignupScreen> {
           print("Password Confirm: ${passwordConfirme.text}");
           print("Bio: ${bio.text}");
 
-          // NavigationsScreen'e git (Profile sayfası açılacak)
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => const NavigationsScreen(),
+              builder: (context) => const SuccessPage(),
             ),
           );
         },
@@ -178,14 +173,14 @@ class _SignupScreenState extends State<SignupScreen> {
           width: double.infinity,
           padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: const Color(0xFF215969),
+            color: Colors.white,
             borderRadius: BorderRadius.circular(15),
           ),
           child: Center(
             child: Text(
-              'Kayıt Ol',
+              'HESAP OLUŞTUR',
               style: TextStyle(
-                  color: Colors.white,
+                  color: const Color(0xFF1E183E),
                   fontSize: 17,
                   fontWeight: FontWeight.bold),
             ),
@@ -202,8 +197,8 @@ class _SignupScreenState extends State<SignupScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          border: Border.all(color: Colors.grey.shade200),
+          color: Color(0xFF16132E),
+
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(
@@ -212,9 +207,10 @@ class _SignupScreenState extends State<SignupScreen> {
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: type,
-              prefixIcon: Icon(
+              hintStyle: TextStyle(color: Colors.grey.shade300),
+              suffixIcon: Icon(
                 icon,
-                color: focusNode.hasFocus ? Colors.black : Colors.grey,
+                color: focusNode.hasFocus ? Colors.white : Colors.grey.shade300,
               ),
               contentPadding:
               EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -222,6 +218,7 @@ class _SignupScreenState extends State<SignupScreen> {
             controller: controller,
             focusNode: focusNode,
             obscureText: obscureText,
+              style: TextStyle(color: Colors.white)
           ),
         ),
       ),

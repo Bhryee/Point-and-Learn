@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:camera/camera.dart';
-import 'package:point_and_learn/screen/camera.dart';
+import 'package:point_and_learn/screen/camera_education.dart';
 import 'package:point_and_learn/screen/signup.dart';
 
 import '../Widget/navigation.dart';
@@ -29,53 +29,65 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFF1E183E), // Koyu mavi/mor background
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height -
-                MediaQuery.of(context).padding.top, // SafeArea yüksekliğini çıkar
+                MediaQuery.of(context).padding.top,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Logo veya resim için alan
                 SizedBox(
                   width: 260,
-                  height: 260,
-                  child: Image.asset(
-                    'images/log-in.png',
-                    fit: BoxFit.contain,
+                  height: 300,
+                  child: Column(
+                    children: [
+                      // Logo
+                      Center(
+                        child: SizedBox(
+                            width: 200,
+                            height: 200,
+                            child: Image.asset('media/logo.png')),
+                      ),
+
+
+                      Text(
+                        "Point&Learn",
+                        style: TextStyle(
+                          fontSize: 40,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+
+                      Text(
+                        "Language Learning App",
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey.shade300,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 60),
 
-                // Başlık
-                Text(
-                  "Hesabınıza giriş yapın",
-                  style: TextStyle(fontSize: 15, color: Colors.grey),
-                ),
-                SizedBox(height: 30),
 
-                // Email field
-                Textfield(email, Icons.email, 'Email', email_F),
-                SizedBox(height: 15),
+                Textfield(email, Icons.person, 'Kullanıcı Adı', email_F),
+                SizedBox(height: 20),
 
-                // Password field
+
                 Textfield(password, Icons.lock, 'Şifre', password_F,
                     obscureText: true),
-                SizedBox(height: 20),
+                SizedBox(height: 40),
 
-                // Forgot password
-                ForgotPassword(),
+                Login(),
                 SizedBox(height: 30),
 
-                // Login button
-                Login(),
-                SizedBox(height: 20),
-
-                // Don't have account
                 DontHaveAcount()
               ],
             ),
@@ -91,24 +103,27 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Hesabın yok mu? '),
+          Text(
+            'Hesabın yok mu? ',
+            style: TextStyle(color: Colors.grey.shade300),
+          ),
           GestureDetector(
             onTap: () {
-              // Signup ekranına git
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SignupScreen(() {}), // Boş callback
+                  builder: (context) => SignupScreen(() {}),
                 ),
               );
             },
             child: Text(
               'Kayıt ol',
               style: TextStyle(
-                  color: const Color(0xFF215969),
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.underline,
-                  decorationColor: const Color(0xFF215969)),
+                color: const Color(0xFF4A90E2),
+                fontWeight: FontWeight.bold,
+                decoration: TextDecoration.underline,
+                decorationColor: const Color(0xFF4A90E2),
+              ),
             ),
           )
         ],
@@ -121,12 +136,10 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: InkWell(
         onTap: () {
-          // Giriş bilgilerini yazdır
           print("Login button tapped");
           print("Email: ${email.text}");
           print("Password: ${password.text}");
 
-          // NavigationsScreen'e git (Profile sayfası açılacak)
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -138,32 +151,21 @@ class _LoginScreenState extends State<LoginScreen> {
           width: double.infinity,
           padding: EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: const Color(0xFF215969),
-            borderRadius: BorderRadius.circular(15),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Center(
             child: Text(
-              'Giriş Yap',
+              'GİRİŞ YAP',
               style: TextStyle(
-                  color: Colors.white, fontSize: 17, fontWeight: FontWeight.bold),
+                color: const Color(0xFF1E183E),
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 1.2,
+              ),
             ),
           ),
         ),
-      ),
-    );
-  }
-
-  Widget ForgotPassword() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40.0),
-      child: Row(
-        children: [
-          Spacer(),
-          Text(
-            'Şifremi unuttum',
-            style: TextStyle(fontSize: 15, color: const Color(0xFF215969)),
-          ),
-        ],
       ),
     );
   }
@@ -175,9 +177,8 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey.shade200,
-          border: Border.all(color: Colors.grey.shade200),
-          borderRadius: BorderRadius.circular(15),
+          color: Color(0xFF16132E),
+          borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
           padding: const EdgeInsets.only(left: 13.0),
@@ -185,9 +186,10 @@ class _LoginScreenState extends State<LoginScreen> {
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: type,
-              prefixIcon: Icon(
+              hintStyle: TextStyle(color: Colors.grey.shade300),
+              suffixIcon: Icon(
                 icon,
-                color: focusNode.hasFocus ? Colors.black : Colors.grey,
+                color: focusNode.hasFocus ? Colors.white : Colors.grey.shade300,
               ),
               contentPadding:
               EdgeInsets.symmetric(horizontal: 15, vertical: 10),
@@ -195,6 +197,7 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: controller,
             focusNode: focusNode,
             obscureText: obscureText,
+            style: TextStyle(color: Colors.white),
           ),
         ),
       ),
