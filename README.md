@@ -199,6 +199,8 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h4>Estimated story points to be completed for Sprint 2: 150</h4>
 
+Due to our busy personal schedules and the problems encountered during coding, we have completed 137.5 points for Sprint 2.
+
 The overall project workload was distributed with a total target of 400 points.
 
 - Sprint 1 (Ideation, Planning & UI/UX Design): Assigned 100 points, reflecting its focus on conceptual development and foundational planning activities.
@@ -228,6 +230,9 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <details open>
 <summary><h2>Burndown Chart</h2></summary>
+
+<img width="1511" height="527" alt="Sprint2_BurndownChart_1" src="https://github.com/user-attachments/assets/8840fe86-b16f-444e-8bde-7e7c69885a8c" />
+<img width="950" height="487" alt="Sprint2_BurnDownChart_2" src="https://github.com/user-attachments/assets/7f3d3631-9f34-4daa-850f-46a7ec982942" />
 
 <h2>Product Backlog URL</h2>
 
