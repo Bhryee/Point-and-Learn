@@ -308,5 +308,7 @@ This distribution ensured a balanced and goal-oriented project management approa
   - Figma</br>
   - Flutter</br>
   - Kaggle</br>
+  - Roboflow</br>
+  - Firestore</br>
 
 </details>
