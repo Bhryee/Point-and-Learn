@@ -172,7 +172,7 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h2>Sprint Retrospective</h2>
 
-- Sprint Retrospective: The user interface design was reviewed on Figma; sections to be updated (e.g., Menu Page, Settings Page, Profile Page, Example Pages) and new screens to be added were identified.
+- The user interface design was reviewed on Figma; sections to be updated (e.g., Menu Page, Settings Page, Profile Page, Example Pages) and new screens to be added were identified.
 - The updates to be made on the frontend side, developed using Flutter, were defined.
 - Coding tasks were distributed among team members.
 - Firebase was selected for backend development and data management.
@@ -193,7 +193,7 @@ This distribution ensured a balanced and goal-oriented project management approa
 - Firebase was used for the Firestore data structure (users, results, sessions).
 - Firebase Storage was used for image and model output.
 - Training of the YOLOv5/YOLOv8 model has begun.
-- Tflite_Flutter was decided to be used for the integration of the AI model.
+- TensorFlow Lite was decided to be used for the integration of the AI model.
 
 <h2>Scoring Logic</h2>
 
@@ -272,6 +272,12 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h2>Sprint Retrospective</h2>
 
+- The user interface design was reviewed on Figma; sections to be updated (e.g., Home Page, History Page) were identified.
+- The updates to be made on the frontend, developed using Flutter, were defined.
+- Coding tasks were updated among team members to accommodate our changing workloads.
+- Issues encountered in backend development and data management will be resolved.
+- Visual dataset research/training continues on Roboflow and Kaggle platforms.
+- TensorFlow Lite work will begin for the development of the artificial intelligence module.
 
 </details>
 
