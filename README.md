@@ -214,7 +214,7 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 ![s2_1 1](https://github.com/user-attachments/assets/c58a40a2-b51d-4472-a78e-6e69bf6c20bd)
 ![s2_2 2](https://github.com/user-attachments/assets/f37a3fc2-ac44-4fec-a0eb-fdb1cba6f1f4)
-
+![s2_3 2](https://github.com/user-attachments/assets/6a777219-3eef-461f-b9b8-e7019ee368cf)
 
 </details>
 
