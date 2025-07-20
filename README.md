@@ -187,6 +187,13 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h2>Sprint 2 Notes</h2>
 
+- The design in Figma was updated to accommodate changes and additions to the UI design.
+- Flutter was used for the frontend coding of Figma designs (registration, login, homepage, camera access, interface, etc.).
+- Firebase was used for the backend coding.
+- Firebase was used for the Firestore data structure (users, results, sessions).
+- Firebase Storage was used for image and model output.
+- Training of the YOLOv5/YOLOv8 model has begun.
+- Tflite_Flutter was decided to be used for the integration of the AI model.
 
 <h2>Scoring Logic</h2>
 
