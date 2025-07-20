@@ -222,7 +222,7 @@ This distribution ensured a balanced and goal-oriented project management approa
 <details open>
 <summary><h2>Project Managements</h2></summary>
 
-<img width="1178" height="753" alt="project management2" src="https://github.com/user-attachments/assets/9d5d8aa8-32a6-43d9-b0da-302dc7851dd5" />
+<img width="1321" height="841" alt="project management2" src="https://github.com/user-attachments/assets/0824ef31-cb92-46ae-9787-c2c53137b8e1" />
 
 </details>
 
