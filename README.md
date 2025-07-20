@@ -260,6 +260,15 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h2>Sprint Review</h2>
 
+- Sprint 2 generally focused on design changes, necessary frontend/backend coding, artificial intelligence coding, and AI integration. The process progressed slowly due to everyone's busy schedule, but overall, we maintained good communication to manage the process.
+- Daily communication was primarily maintained through WhatsApp, and meetings were scheduled based on our daily availability.
+- For the schedule and burndown chart, we used Miro, Trello, and Excel. These tools were collaboratively managed under the guidance of İkra Nur Hincal, Bahriye İşgör, and Yusuf Mıraz Esen.
+- The Sprint 2 coding project framework was created by the entire team under the leadership of Serkan Özdemir.
+- The README section for Sprint 2 on GitHub was written by İkra Nur Hincal.
+- The UI design changes were edited in Figma by İkra Nur Hincal. Design changes were made by Bahriye İşgör, who coded Fronted in Flutter.
+- Backend coding began with Vecih Hammour, who used the Firestore data structure (users, results, sessions) and Firebase Storage for the view/model output.
+- Serkan Özdemir conducted dataset research using Roboflow and Kaggle, and trained the YOLOv5/YOLOv8 model.
+- A successful sprint process was achieved based on the features added to the plan.
 
 <h2>Sprint Retrospective</h2>
 
