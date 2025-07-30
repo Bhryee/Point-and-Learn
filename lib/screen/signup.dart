@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:camera/camera.dart';
-import 'package:point_and_learn/Widget/navigation.dart';
 import 'package:point_and_learn/screen/success.dart';
-import 'package:point_and_learn/screen/camera_education.dart';
 import 'package:point_and_learn/screen/login.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupScreen extends StatefulWidget {
   final VoidCallback show;
 
-  SignupScreen(this.show, {super.key});
+  const SignupScreen(this.show, {super.key});
 
   @override
   State<SignupScreen> createState() => _SignupScreenState();
@@ -42,7 +40,7 @@ class _SignupScreenState extends State<SignupScreen> {
       backgroundColor: Color(0xFF1E183E),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height -
                 MediaQuery.of(context).padding.top, // SafeArea yüksekliğini çıkar
@@ -151,6 +149,7 @@ class _SignupScreenState extends State<SignupScreen> {
   }
 
   Widget Signup() {
+    
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: InkWell(
@@ -161,7 +160,10 @@ class _SignupScreenState extends State<SignupScreen> {
           print("Password: ${password.text}");
           print("Password Confirm: ${passwordConfirme.text}");
           print("Bio: ${bio.text}");
+              String mail = email.text.trim();
+    String pass = password.text.trim();
 
+    
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -188,6 +190,7 @@ class _SignupScreenState extends State<SignupScreen> {
         ),
       ),
     );
+
   }
 
   Widget Textfield(TextEditingController controller, IconData icon, String type,

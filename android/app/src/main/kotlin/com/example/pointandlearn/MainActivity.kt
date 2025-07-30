@@ -1,4 +1,4 @@
-package com.example.point_and_learn
+package com.example.pointandlearn
 
 import io.flutter.embedding.android.FlutterActivity
 

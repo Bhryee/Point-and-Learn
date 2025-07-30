@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:point_and_learn/screen/signup.dart';
 
 import 'login.dart';
 
@@ -17,7 +16,7 @@ class _SuccessPageState extends State<SuccessPage> {
       backgroundColor: const Color(0xFF1E183E), // Koyu mavi/mor background
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height -
                 MediaQuery.of(context).padding.top,

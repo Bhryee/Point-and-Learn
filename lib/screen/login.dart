@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:camera/camera.dart';
-import 'package:point_and_learn/screen/camera_education.dart';
 import 'package:point_and_learn/screen/signup.dart';
 
 import '../Widget/navigation.dart';
 
 class LoginScreen extends StatefulWidget {
   final VoidCallback show;
-  LoginScreen(this.show, {super.key});
+  const LoginScreen(this.show, {super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -27,12 +24,13 @@ class _LoginScreenState extends State<LoginScreen> {
     password.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF1E183E), // Koyu mavi/mor background
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height -
                 MediaQuery.of(context).padding.top,

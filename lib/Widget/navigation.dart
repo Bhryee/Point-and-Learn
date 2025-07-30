@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
-import 'package:point_and_learn/screen/camera_education.dart';
 import 'package:point_and_learn/screen/home_education.dart';
-import 'package:point_and_learn/screen/sentence_education.dart';
 import 'package:point_and_learn/screen/settings.dart';
 
 class NavigationsScreen extends StatefulWidget {

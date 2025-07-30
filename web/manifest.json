@@ -1,6 +1,6 @@
 {
-    "name": "point_and_learn",
-    "short_name": "point_and_learn",
+    "name": "pointandlearn",
+    "short_name": "pointandlearn",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

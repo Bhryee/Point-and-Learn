@@ -208,7 +208,7 @@ class _CameraState extends State<Camera> {
 
             // Ana kamera alanı
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: Stack(
                   children: [
@@ -244,7 +244,7 @@ class _CameraState extends State<Camera> {
 
                   // Tespit edilen nesne butonu
                   if (_detectedObject.isNotEmpty)
-                    Container(
+                    SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {

@@ -17,7 +17,7 @@ class _WelcomePageState extends State<WelcomePage> {
       backgroundColor: const Color(0xFF1E183E), // Koyu mavi/mor background
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height -
                 MediaQuery.of(context).padding.top,
