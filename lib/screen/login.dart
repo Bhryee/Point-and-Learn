@@ -77,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 60),
 
 
-                Textfield(email, Icons.person, 'Kullanıcı Adı', email_F),
+                Textfield(email, Icons.person, 'Email', email_F),
                 SizedBox(height: 20),
 
 
