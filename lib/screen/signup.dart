@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:point_and_learn/screen/success.dart';
 import 'package:point_and_learn/screen/login.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class SignupScreen extends StatefulWidget {
   final VoidCallback show;
-
   const SignupScreen(this.show, {super.key});
 
   @override
@@ -14,59 +13,51 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   final email = TextEditingController();
-  FocusNode email_F = FocusNode();
   final password = TextEditingController();
-  FocusNode password_F = FocusNode();
-  final username = TextEditingController();
-  FocusNode username_F = FocusNode();
   final passwordConfirme = TextEditingController();
-  FocusNode passwordConfirme_F = FocusNode();
+  final username = TextEditingController();
   final bio = TextEditingController();
-  FocusNode bio_F = FocusNode();
+
+  final FocusNode email_F = FocusNode();
+  final FocusNode password_F = FocusNode();
+  final FocusNode passwordConfirme_F = FocusNode();
+  final FocusNode username_F = FocusNode();
+  final FocusNode bio_F = FocusNode();
 
   @override
   void dispose() {
-    super.dispose();
     email.dispose();
     password.dispose();
     passwordConfirme.dispose();
     username.dispose();
     bio.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF1E183E),
+      backgroundColor: const Color(0xFF1E183E),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: SizedBox(
-            width: double.infinity,
+          child: Container(
             height: MediaQuery.of(context).size.height -
-                MediaQuery.of(context).padding.top, // SafeArea yüksekliğini çıkar
+                MediaQuery.of(context).padding.top,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-
+                const SizedBox(height: 20),
                 SizedBox(
                   width: 150,
                   height: 100,
-                  child: Image.asset(
-                    'media/logo.png',
-                    fit: BoxFit.contain,
-                  ),
+                  child: Image.asset('media/logo.png'),
                 ),
-                SizedBox(height: 20),
-
-
-                Text(
+                const SizedBox(height: 20),
+                const Text(
                   "Profil fotoğrafı seçiniz",
                   style: TextStyle(fontSize: 15, color: Colors.white),
                 ),
-                SizedBox(height: 20),
-
-
+                const SizedBox(height: 20),
                 InkWell(
                   onTap: () {
                     print("Profile picture tapped");
@@ -81,33 +72,21 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
-
-                // Username field
+                const SizedBox(height: 20),
                 Textfield(username, Icons.person, 'Kullanıcı adı', username_F),
-                SizedBox(height: 10),
-
-                // Email field
+                const SizedBox(height: 10),
                 Textfield(email, Icons.email, 'Email', email_F),
-                SizedBox(height: 10),
-
-                // Password field
+                const SizedBox(height: 10),
                 Textfield(password, Icons.lock, 'Şifre', password_F,
                     obscureText: true),
-                SizedBox(height: 10),
-
-                // Password confirm field
+                const SizedBox(height: 10),
                 Textfield(passwordConfirme, Icons.lock, 'Şifre Tekrar',
                     passwordConfirme_F,
                     obscureText: true),
-                SizedBox(height: 30),
-
-                // Signup button
-                Signup(),
-                SizedBox(height: 20),
-
-                // Already have account
-                DontHaveAcount()
+                const SizedBox(height: 30),
+                SignupButton(),
+                const SizedBox(height: 20),
+                AlreadyHaveAccount(),
               ],
             ),
           ),
@@ -116,73 +95,88 @@ class _SignupScreenState extends State<SignupScreen> {
     );
   }
 
-  Widget DontHaveAcount() {
+  Widget AlreadyHaveAccount() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Zaten hesabın var mı? ', style: TextStyle(color: Colors.grey.shade300),),
-
-          GestureDetector(
-            onTap: () {
-              // Login ekranına git
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => LoginScreen(() {}), // Boş callback
-                ),
-              );
-            },
-            child: Text(
-              'Giriş yap',
-              style: TextStyle(
-                  color: const Color(0xFF4A90E2),
-                  fontWeight: FontWeight.bold,
-                  decoration: TextDecoration.underline,
-                  decorationColor: const Color(0xFF4A90E2)),
+      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Text('Zaten hesabın var mı? ',
+            style: TextStyle(color: Colors.grey.shade300)),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginScreen(() {})),
+            );
+          },
+          child: Text(
+            'Giriş yap',
+            style: TextStyle(
+              color: Color(0xFF4A90E2),
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.underline,
+              decorationColor: Color(0xFF4A90E2),
             ),
-          )
-        ],
-      ),
+          ),
+        )
+      ]),
     );
   }
 
-  Widget Signup() {
-    
+  Widget SignupButton() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: InkWell(
-        onTap: () {
-          print("Signup button tapped");
-          print("Username: ${username.text}");
-          print("Email: ${email.text}");
-          print("Password: ${password.text}");
-          print("Password Confirm: ${passwordConfirme.text}");
-          print("Bio: ${bio.text}");
-              String mail = email.text.trim();
-    String pass = password.text.trim();
+        onTap: () async {
+          final userEmail = email.text.trim();
+          final userPassword = password.text.trim();
+          final userPasswordConfirm = passwordConfirme.text.trim();
 
-    
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const SuccessPage(),
-            ),
-          );
+          if (userEmail.isEmpty ||
+              userPassword.isEmpty ||
+              userPasswordConfirm.isEmpty) {
+            showSnackbar("Lütfen tüm alanları doldurun.");
+            return;
+          }
+
+          if (userPassword != userPasswordConfirm) {
+            showSnackbar("Şifreler eşleşmiyor.");
+            return;
+          }
+
+          try {
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+              email: userEmail,
+              password: userPassword,
+            );
+
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const SuccessPage()),
+            );
+          } on FirebaseAuthException catch (e) {
+            String errorMessage = 'Bir hata oluştu';
+            if (e.code == 'email-already-in-use') {
+              errorMessage = 'Bu e-posta adresi zaten kullanılıyor.';
+            } else if (e.code == 'weak-password') {
+              errorMessage = 'Şifre çok zayıf.';
+            } else if (e.code == 'invalid-email') {
+              errorMessage = 'Geçersiz e-posta adresi.';
+            }
+            showSnackbar(errorMessage);
+          }
         },
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Center(
+          child: const Center(
             child: Text(
               'HESAP OLUŞTUR',
               style: TextStyle(
-                  color: const Color(0xFF1E183E),
+                  color: Color(0xFF1E183E),
                   fontSize: 17,
                   fontWeight: FontWeight.bold),
             ),
@@ -190,41 +184,45 @@ class _SignupScreenState extends State<SignupScreen> {
         ),
       ),
     );
-
   }
 
-  Widget Textfield(TextEditingController controller, IconData icon, String type,
+  Widget Textfield(TextEditingController controller, IconData icon, String hint,
       FocusNode focusNode,
       {bool obscureText = false}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xFF16132E),
-
+          color: const Color(0xFF16132E),
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(
           padding: const EdgeInsets.only(left: 13.0),
           child: TextField(
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: type,
-              hintStyle: TextStyle(color: Colors.grey.shade300),
-              suffixIcon: Icon(
-                icon,
-                color: focusNode.hasFocus ? Colors.white : Colors.grey.shade300,
-              ),
-              contentPadding:
-              EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            ),
             controller: controller,
             focusNode: focusNode,
             obscureText: obscureText,
-              style: TextStyle(color: Colors.white)
+            style: const TextStyle(color: Colors.white),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: hint,
+              hintStyle: TextStyle(color: Colors.grey.shade300),
+              suffixIcon: Icon(icon,
+                  color:
+                      focusNode.hasFocus ? Colors.white : Colors.grey.shade300),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            ),
           ),
         ),
       ),
     );
+  }
+
+  void showSnackbar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      content: Text(message),
+      backgroundColor: Colors.redAccent,
+    ));
   }
 }

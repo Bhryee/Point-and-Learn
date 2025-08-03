@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
+import 'welcome.dart';
 import 'login.dart';
 
 class SuccessPage extends StatefulWidget {
@@ -10,10 +11,27 @@ class SuccessPage extends StatefulWidget {
 }
 
 class _SuccessPageState extends State<SuccessPage> {
+  Future<void> signOutAndGoToWelcome() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (_) => const WelcomePage()),
+        (route) => false,
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Çıkış yapılamadı: $e"),
+        backgroundColor: Colors.red,
+      ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E183E), // Koyu mavi/mor background
+      backgroundColor: const Color(0xFF1E183E),
       body: SafeArea(
         child: SingleChildScrollView(
           child: SizedBox(
@@ -22,22 +40,20 @@ class _SuccessPageState extends State<SuccessPage> {
                 MediaQuery.of(context).padding.top,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                const SizedBox(height: 20),
                 SizedBox(
                   width: 260,
                   height: 300,
                   child: Column(
                     children: [
-                      // Logo
-                      Center(
-                        child: SizedBox(
-                            width: 200,
-                            height: 200,
-                            child: Image.asset('media/logo.png')),
+                      SizedBox(
+                        width: 200,
+                        height: 200,
+                        child: Image.asset('media/logo.png'),
                       ),
-
-                      Text(
+                      const SizedBox(height: 10),
+                      const Text(
                         "Point&Learn",
                         style: TextStyle(
                           fontSize: 40,
@@ -49,17 +65,15 @@ class _SuccessPageState extends State<SuccessPage> {
                         "Language Learning App",
                         style: TextStyle(
                           fontSize: 14,
-                          color: Colors.grey.shade300,
+                          color: Colors.grey,
                         ),
                       ),
-
                     ],
                   ),
                 ),
-                SizedBox(height: 30),
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                const SizedBox(height: 30),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
                     "POINT & LEARN'E HOŞGELDİN!",
                     style: TextStyle(
@@ -70,27 +84,22 @@ class _SuccessPageState extends State<SuccessPage> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-
-                SizedBox(height: 30),
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                const SizedBox(height: 20),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 40),
                   child: Text(
-                    "Hesabın başarıyla oluşturuldu. Başlamak için giriş yapman gerekiyor.",
+                    "Hesabın başarıyla oluşturuldu. Devam etmek için giriş yapabilir veya çıkış yapabilirsin.",
                     style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
-                      fontWeight: FontWeight.w500,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-
-                SizedBox(height: 30),
-                // Sign In button
-                Login(),
-                SizedBox(height: 30),
-
+                const SizedBox(height: 30),
+                _loginButton(),
+                const SizedBox(height: 20),
+                _logoutButton(),
               ],
             ),
           ),
@@ -99,9 +108,7 @@ class _SuccessPageState extends State<SuccessPage> {
     );
   }
 
-
-
-  Widget Login() {
+  Widget _loginButton() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: InkWell(
@@ -115,18 +122,46 @@ class _SuccessPageState extends State<SuccessPage> {
         },
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(15),
           ),
-          child: Center(
+          child: const Center(
             child: Text(
               'GİRİŞ YAP',
               style: TextStyle(
-                  color: const Color(0xFF1E183E),
-                  fontSize: 17,
-                  fontWeight: FontWeight.bold),
+                color: Color(0xFF1E183E),
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _logoutButton() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      child: InkWell(
+        onTap: signOutAndGoToWelcome,
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(15),
+          decoration: BoxDecoration(
+            color: Colors.redAccent,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: const Center(
+            child: Text(
+              'ÇIKIŞ YAP',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 17,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),

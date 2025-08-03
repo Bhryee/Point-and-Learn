@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:point_and_learn/screen/camera_education.dart';
+import 'package:point_and_learn/screen/welcome.dart';
 
 class HomeEducationPage extends StatefulWidget {
   const HomeEducationPage({super.key});
@@ -33,7 +35,7 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
     }
   }
 
-  void _navigateToCamera(String category) async {
+  void _navigateToCamera(String category) {
     if (cameras.isNotEmpty) {
       Navigator.push(
         context,
@@ -43,28 +45,54 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text('Kamera bulunamadı!'),
           backgroundColor: Colors.red,
         ),
       );
     }
   }
+
+  Future<void> _signOut() async {
+    await FirebaseAuth.instance.signOut();
+    if (context.mounted) {
+      Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (_) => const WelcomePage()),
+        (route) => false,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Text(
+          'Point&Learn',
+          style: TextStyle(color: Colors.black),
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout, color: Colors.black),
+            tooltip: 'Çıkış Yap',
+            onPressed: _signOut,
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Point Object Section
+            // Başlık
             Container(
               width: double.infinity,
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               color: Colors.white,
               child: Row(
                 children: [
-                  // Logo
                   SizedBox(
                     width: 60,
                     height: 60,
@@ -73,9 +101,8 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
                       fit: BoxFit.contain,
                     ),
                   ),
-                  SizedBox(width: 15),
-                  // Point Object Text
-                  Text(
+                  const SizedBox(width: 15),
+                  const Text(
                     "Point Object",
                     style: TextStyle(
                       fontSize: 24,
@@ -87,12 +114,11 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
               ),
             ),
 
-
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
               color: Colors.green.shade400,
-              child: Text(
+              child: const Text(
                 "Point&Learn History",
                 style: TextStyle(
                   fontSize: 18,
@@ -102,34 +128,26 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
               ),
             ),
 
-
             Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
                 children: [
-                  // Kitchen Tools Section
                   _buildLearningCard(
                     title: "Kitchen Tools",
-                    imagePath: "assets/kitchen_tools.jpg", // Mutfak resmi
+                    imagePath: "assets/kitchen_tools.jpg",
                     onTap: () {
                       _navigateToCamera("Kitchen Tools");
                     },
                   ),
-
-                  SizedBox(height: 20),
-
-
+                  const SizedBox(height: 20),
                   _buildLearningCard(
                     title: "Home Appliances",
-                    imagePath: "assets/home_appliances.jpg", // Ev aletleri resmi
+                    imagePath: "assets/home_appliances.jpg",
                     onTap: () {
                       _navigateToCamera("Home Appliances");
                     },
                   ),
-
-                  SizedBox(height: 20),
-
-
+                  const SizedBox(height: 20),
                   _buildLearningCard(
                     title: "Living Room",
                     imagePath: "assets/living_room.jpg",
@@ -137,9 +155,7 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
                       _navigateToCamera("Living Room");
                     },
                   ),
-
-                  SizedBox(height: 20),
-
+                  const SizedBox(height: 20),
                   _buildLearningCard(
                     title: "Bedroom Items",
                     imagePath: "assets/bedroom.jpg",
@@ -173,31 +189,28 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
               color: Colors.grey.withOpacity(0.2),
               spreadRadius: 2,
               blurRadius: 8,
-              offset: Offset(0, 2),
+              offset: const Offset(0, 2),
             ),
           ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Title
             Padding(
               padding: const EdgeInsets.all(15),
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
                 ),
               ),
             ),
-
-            // Image
             Container(
               width: double.infinity,
               height: 200,
-              margin: EdgeInsets.symmetric(horizontal: 15),
+              margin: const EdgeInsets.symmetric(horizontal: 15),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 color: Colors.grey.shade200,
@@ -208,7 +221,6 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
                   imagePath,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
-                    // Resim bulunamadığında placeholder göster
                     return Container(
                       color: Colors.grey.shade200,
                       child: Column(
@@ -219,7 +231,7 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
                             size: 60,
                             color: Colors.grey.shade400,
                           ),
-                          SizedBox(height: 10),
+                          const SizedBox(height: 10),
                           Text(
                             title,
                             style: TextStyle(
@@ -235,8 +247,7 @@ class _HomeEducationPageState extends State<HomeEducationPage> {
                 ),
               ),
             ),
-
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
           ],
         ),
       ),
