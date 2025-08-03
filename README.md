@@ -381,7 +381,13 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h2>Sprint Review</h2>
 
-- Sprint 2 generally focused on design changes, necessary frontend/backend coding, artificial intelligence coding, and AI integration. The process progressed slowly due to everyone's busy schedule, but overall, we maintained good communication to manage the process.
+- Sprint 3 generally focused on design changes, necessary frontend/backend coding, artificial intelligence coding, and AI integration. The process progressed slowly due to everyone's busy schedule. 
+- Daily communication was primarily maintained through WhatsApp, and meetings were scheduled based on our daily availability. 
+- For the schedule and burndown chart, we used Miro and Excel. These tools were collaboratively managed under the guidance of İkra Nur Hincal. 
+- The README section for Sprints on GitHub was written by İkra Nur Hincal. 
+- The UI design changes were edited in Figma by İkra Nur Hincal. Design changes were made by İkra Nur Hincal and Bahriye İşgör, who coded Fronted in Flutter. 
+- Backend coding began with Vecih Hammour, who used the Firestore data structure (users, results, sessions) and Firebase Storage for the view/model output. 
+- Serkan Özdemir conducted dataset research using Roboflow and Kaggle, and trained the YOLOv5/YOLOv8 model. Difficulties were encountered in training and integrating the model in the sprint, and the implementation could not be completed.
 
 
 <h2>Sprint Retrospective</h2>
@@ -394,7 +400,6 @@ This distribution ensured a balanced and goal-oriented project management approa
 <details open>
 <summary><h1>Tools Used</h1></summary>
   
-<h3>Sprint 1 and 2</h3>
   - Miro</br>
   - Treollo</br>
   - Excel</br>
