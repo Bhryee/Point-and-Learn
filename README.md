@@ -300,8 +300,12 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h2>Sprint 3 Notes</h2>
 
-- The design in Figma was updated to accommodate changes and additions to the UI design.
-
+- The menu page design in Figma was updated.
+- Flutter was updated for the frontend coding of Figma designs.
+- Firebase was used for the backend coding.
+- Firebase was updated for the Firestore data structure (users, results, sessions).
+- Firebase Storage was used for image and model output.
+- An attempt was made to train the YOLOv5/YOLOv8 model.
 
 <h2>Scoring Logic</h2>
 
