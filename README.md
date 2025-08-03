@@ -307,7 +307,7 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h4>Estimated story points to be completed for Sprint 3: 150</h4>
 
-Due to our busy personal schedules and the problems encountered during coding, we have completed points for Sprint 3.
+Due to our busy personal schedules and the problems encountered during coding, we have completed 60 points for Sprint 3.
 
 The overall project workload was distributed with a total target of 400 points.
 
@@ -320,8 +320,7 @@ This distribution ensured a balanced and goal-oriented project management approa
 <details open>
 <summary><h2>Daily Scrum Examples</h2></summary>
 
-
-
+![s3_1](https://github.com/user-attachments/assets/521b6ad6-12df-4456-94d3-735b3084b93b)
 
 
 </details>
@@ -329,16 +328,18 @@ This distribution ensured a balanced and goal-oriented project management approa
 <details open>
 <summary><h2>Sprint 3 Board Screenshots</h2></summary>
 
-
 <details open>
 <summary><h2>Project Managements</h2></summary>
-
+  
+<img width="1458" height="825" alt="project management3" src="https://github.com/user-attachments/assets/1fecfc35-5f87-451f-8e3e-6fbf30a53305" />
 
 </details>
 
 <details open>
 <summary><h2>Burndown Chart</h2></summary>
 
+<img width="1549" height="401" alt="Sprint3_BurnDown1" src="https://github.com/user-attachments/assets/c00d719c-0f03-4dff-b7b7-b4103da4b0de" />
+<img width="955" height="490" alt="Sprint3_BurnDown2" src="https://github.com/user-attachments/assets/0b726c3e-134a-43d1-a9c6-38806e08408f" />
 
 <h2>Product Backlog URL</h2>
 
