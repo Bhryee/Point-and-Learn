@@ -33,7 +33,7 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
       HomeEducationPage(),
       HomeEducationPage(),
       SettingsPage(),
-      SignOutPage(),
+      SizedBox(),
     ];
   }
 
@@ -56,6 +56,21 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
       _selectedIndex = index;
     });
     Navigator.pop(context);
+
+    if (index == 3) {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (context) => LoginPage()),
+      (route) => false,
+    );
+  } else {
+    setState(() {
+      _selectedIndex = index;
+    });
+    Navigator.pop(context);
+  }
   }
 
   @override
