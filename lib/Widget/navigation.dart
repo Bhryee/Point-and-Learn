@@ -88,9 +88,9 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
       case 1:
         return 'Recent';
       case 2:
-        return 'Favorites';
-      case 3:
         return 'Settings';
+      case 3:
+        return 'Sign Out';
       default:
         return 'Point&Learn';
     }
