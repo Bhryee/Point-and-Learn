@@ -52,10 +52,6 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
   }
 
   void _onItemTapped(int index) async {
-    setState(() {
-      _selectedIndex = index;
-    });
-    Navigator.pop(context);
 
     if (index == 3) {
     final prefs = await SharedPreferences.getInstance();
