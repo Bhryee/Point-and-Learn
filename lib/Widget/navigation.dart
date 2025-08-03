@@ -31,7 +31,7 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
   void _initializePages() {
     _pages = [
       HomeEducationPage(),
-      SentenceEducationPage(),
+      EducationPage(),
       SettingsPage(),
       SizedBox(),
     ];
