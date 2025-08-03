@@ -51,7 +51,7 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
     }
   }
 
-  void _onItemTapped(int index) {
+  void _onItemTapped(int index) async {
     setState(() {
       _selectedIndex = index;
     });
