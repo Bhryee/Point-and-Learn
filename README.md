@@ -103,9 +103,9 @@ This distribution ensured a balanced and goal-oriented project management approa
 <details open>
 <summary><h2>Daily Scrum Examples</h2></summary>
 
-![ds1_1](https://github.com/user-attachments/assets/a11878af-6d10-439e-bb44-822f7516f3dd)
-![ds2_2](https://github.com/user-attachments/assets/28f195cb-f16c-40f9-a397-f4519466fff6)
-![ds3_3](https://github.com/user-attachments/assets/5c01779e-ec7a-4fa9-a6ca-a367b5a11772)
+<img src="https://github.com/user-attachments/assets/a11878af-6d10-439e-bb44-822f7516f3dd" width="250"/>
+<img src="https://github.com/user-attachments/assets/28f195cb-f16c-40f9-a397-f4519466fff6" width="250"/>
+<img src="https://github.com/user-attachments/assets/5c01779e-ec7a-4fa9-a6ca-a367b5a11772" width="250"/>
 
 </details>
 
@@ -212,9 +212,9 @@ This distribution ensured a balanced and goal-oriented project management approa
 <details open>
 <summary><h2>Daily Scrum Examples</h2></summary>
   
-<img src="https://github.com/user-attachments/assets/c58a40a2-b51d-4472-a78e-6e69bf6c20bd" width="150"/>
-<img src="https://github.com/user-attachments/assets/f37a3fc2-ac44-4fec-a0eb-fdb1cba6f1f4" width="150"/>
-<img src="https://github.com/user-attachments/assets/6a777219-3eef-461f-b9b8-e7019ee368cf" width="150"/>
+<img src="https://github.com/user-attachments/assets/c58a40a2-b51d-4472-a78e-6e69bf6c20bd" width="250"/>
+<img src="https://github.com/user-attachments/assets/f37a3fc2-ac44-4fec-a0eb-fdb1cba6f1f4" width="250"/>
+<img src="https://github.com/user-attachments/assets/6a777219-3eef-461f-b9b8-e7019ee368cf" width="250"/>
 
 
 </details>
@@ -324,9 +324,9 @@ This distribution ensured a balanced and goal-oriented project management approa
 <details open>
 <summary><h2>Daily Scrum Examples</h2></summary>
 
-<img src="https://github.com/user-attachments/assets/521b6ad6-12df-4456-94d3-735b3084b93b" width="200"/>
-<img src="https://github.com/user-attachments/assets/d2009627-b4da-478e-86c3-38ba56061b37" width="200"/>
-<img src="https://github.com/user-attachments/assets/2b06dc8f-f6b4-48d5-a914-eeebf189fba7" width="200"/>
+<img src="https://github.com/user-attachments/assets/521b6ad6-12df-4456-94d3-735b3084b93b" width="250"/>
+<img src="https://github.com/user-attachments/assets/d2009627-b4da-478e-86c3-38ba56061b37" width="250"/>
+<img src="https://github.com/user-attachments/assets/2b06dc8f-f6b4-48d5-a914-eeebf189fba7" width="250"/>
 
 </details>
 
