@@ -40,7 +40,7 @@ class _SignupScreenState extends State<SignupScreen> {
       backgroundColor: const Color(0xFF1E183E),
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height -
                 MediaQuery.of(context).padding.top,
             child: Column(
@@ -73,7 +73,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Textfield(username, Icons.person, 'Kullanıcı adı', username_F),
+                
                 const SizedBox(height: 10),
                 Textfield(email, Icons.email, 'Email', email_F),
                 const SizedBox(height: 10),

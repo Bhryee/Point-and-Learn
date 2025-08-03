@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:point_and_learn/screen/signup.dart';
-
 import '../Widget/navigation.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -13,21 +13,58 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final email = TextEditingController();
-  FocusNode email_F = FocusNode();
   final password = TextEditingController();
-  FocusNode password_F = FocusNode();
+  final email_F = FocusNode();
+  final password_F = FocusNode();
+
+  bool isLoading = false;
 
   @override
   void dispose() {
-    super.dispose();
     email.dispose();
     password.dispose();
+    email_F.dispose();
+    password_F.dispose();
+    super.dispose();
+  }
+
+  void showSnackBar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  Future<void> handleLogin() async {
+    setState(() => isLoading = true);
+
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(
+        email: email.text.trim(),
+        password: password.text.trim(),
+      );
+
+      // Başarılı giriş
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const NavigationsScreen()),
+      );
+    } on FirebaseAuthException catch (e) {
+      // Hatalı giriş
+      String error = 'Giriş başarısız';
+      if (e.code == 'user-not-found') {
+        error = 'Kullanıcı bulunamadı';
+      } else if (e.code == 'wrong-password') {
+        error = 'Yanlış şifre';
+      }
+      showSnackBar(error);
+    } finally {
+      setState(() => isLoading = false);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E183E), // Koyu mavi/mor background
+      backgroundColor: const Color(0xFF1E183E),
       body: SafeArea(
         child: SingleChildScrollView(
           child: SizedBox(
@@ -36,23 +73,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 MediaQuery.of(context).padding.top,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
                   width: 260,
                   height: 300,
                   child: Column(
                     children: [
-                      // Logo
                       Center(
                         child: SizedBox(
-                            width: 200,
-                            height: 200,
-                            child: Image.asset('media/logo.png')),
+                          width: 200,
+                          height: 200,
+                          child: Image.asset('media/logo.png'),
+                        ),
                       ),
-
-
-                      Text(
+                      const Text(
                         "Point&Learn",
                         style: TextStyle(
                           fontSize: 40,
@@ -60,8 +94,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 5),
-
+                      const SizedBox(height: 5),
                       Text(
                         "Language Learning App",
                         style: TextStyle(
@@ -72,21 +105,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 60),
-
-
-                Textfield(email, Icons.person, 'Kullanıcı Adı', email_F),
-                SizedBox(height: 20),
-
-
-                Textfield(password, Icons.lock, 'Şifre', password_F,
-                    obscureText: true),
-                SizedBox(height: 40),
-
-                Login(),
-                SizedBox(height: 30),
-
-                DontHaveAcount()
+                const SizedBox(height: 60),
+                buildTextField(email, Icons.email, 'Email', email_F),
+                const SizedBox(height: 20),
+                buildTextField(password, Icons.lock, 'Şifre', password_F, obscureText: true),
+                const SizedBox(height: 40),
+                buildLoginButton(),
+                const SizedBox(height: 30),
+                buildSignupRedirect(),
               ],
             ),
           ),
@@ -95,87 +121,69 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget DontHaveAcount() {
+  Widget buildSignupRedirect() {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Hesabın yok mu? ',
-            style: TextStyle(color: Colors.grey.shade300),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SignupScreen(() {}),
-                ),
-              );
-            },
-            child: Text(
-              'Kayıt ol',
-              style: TextStyle(
-                color: const Color(0xFF4A90E2),
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.underline,
-                decorationColor: const Color(0xFF4A90E2),
-              ),
+      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        Text('Hesabın yok mu? ', style: TextStyle(color: Colors.grey.shade300)),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => SignupScreen(() {})),
+            );
+          },
+          child: const Text(
+            'Kayıt ol',
+            style: TextStyle(
+              color: Color(0xFF4A90E2),
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.underline,
             ),
-          )
-        ],
-      ),
+          ),
+        ),
+      ]),
     );
   }
 
-  Widget Login() {
+  Widget buildLoginButton() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: InkWell(
-        onTap: () {
-          print("Login button tapped");
-          print("Email: ${email.text}");
-          print("Password: ${password.text}");
-
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const NavigationsScreen(),
-            ),
-          );
-        },
+        onTap: isLoading ? null : handleLogin,
         child: Container(
           width: double.infinity,
-          padding: EdgeInsets.all(15),
+          padding: const EdgeInsets.all(15),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: isLoading ? Colors.grey : Colors.white,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Center(
-            child: Text(
-              'GİRİŞ YAP',
-              style: TextStyle(
-                color: const Color(0xFF1E183E),
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.2,
-              ),
-            ),
+            child: isLoading
+                ? const CircularProgressIndicator(color: Color(0xFF1E183E))
+                : const Text(
+                    'GİRİŞ YAP',
+                    style: TextStyle(
+                      color: Color(0xFF1E183E),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
           ),
         ),
       ),
     );
   }
 
-  Widget Textfield(TextEditingController controller, IconData icon, String type,
+  Widget buildTextField(TextEditingController controller, IconData icon, String type,
       FocusNode focusNode,
       {bool obscureText = false}) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Container(
         decoration: BoxDecoration(
-          color: Color(0xFF16132E),
+          color: const Color(0xFF16132E),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
@@ -189,13 +197,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 icon,
                 color: focusNode.hasFocus ? Colors.white : Colors.grey.shade300,
               ),
-              contentPadding:
-              EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             ),
             controller: controller,
             focusNode: focusNode,
             obscureText: obscureText,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ),
       ),
