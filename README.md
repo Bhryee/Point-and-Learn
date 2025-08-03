@@ -292,9 +292,97 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 </details>
 
+
+
 <details open>
 <summary><h1>Sprints 3</h1></summary>
 </details>
+
+<h2>Sprint 3 Notes</h2>
+
+- The design in Figma was updated to accommodate changes and additions to the UI design.
+
+
+<h2>Scoring Logic</h2>
+
+<h4>Estimated story points to be completed for Sprint 3: 150</h4>
+
+Due to our busy personal schedules and the problems encountered during coding, we have completed points for Sprint 3.
+
+The overall project workload was distributed with a total target of 400 points.
+
+- Sprint 1 (Ideation, Planning & UI/UX Design): Assigned 100 points, reflecting its focus on conceptual development and foundational planning activities.
+- Sprint 2 (Development & AI Integration): Allocated 150 points, due to its emphasis on coding, implementation of AI models, and a more intensive workflow.
+- Sprint 3 (Review & Finalization): Also assigned 150 points, as it covers the comprehensive review of all components, debugging, and the preparation of finalized project deliverables.
+
+This distribution ensured a balanced and goal-oriented project management approach across all sprints.
+
+<details open>
+<summary><h2>Daily Scrum Examples</h2></summary>
+
+
+
+
+
+</details>
+
+<details open>
+<summary><h2>Sprint 3 Board Screenshots</h2></summary>
+
+
+<details open>
+<summary><h2>Project Managements</h2></summary>
+
+
+</details>
+
+<details open>
+<summary><h2>Burndown Chart</h2></summary>
+
+
+<h2>Product Backlog URL</h2>
+
+[Product Backlog URL](https://miro.com/app/board/uXjVIhNALLE=/?share_link_id=756475408743)
+
+</details>
+
+</details>
+
+
+<details open>
+<summary><h2>Product Status: App Screenshots</h2></summary>
+
+<h3>Login Page</h3>
+
+![login_page](https://github.com/user-attachments/assets/f0261dff-1227-4f03-89ea-d339d8930d29)
+
+<h3>Home Page</h3>
+
+![home_page](https://github.com/user-attachments/assets/a226a141-2773-4bba-8ba6-ea3724195ca4)
+
+<h3>Menu and Settings Pages</h3>
+
+<img width="1453" height="756" alt="menu_settings4" src="https://github.com/user-attachments/assets/2c2654e7-d545-48f6-bccb-aaef0573cdd7" />
+<img width="629" height="665" alt="menu_settings3" src="https://github.com/user-attachments/assets/d3f62498-be22-4b5e-9751-22003597b3de" />
+
+<h3>Example Pages</h3>
+
+![example_page1](https://github.com/user-attachments/assets/9d15f2f0-229e-48a6-a6c8-83fdc73b2d27)
+![example_page2](https://github.com/user-attachments/assets/7618d4a7-f07d-45bc-b051-504871006e6d)
+![example_page3](https://github.com/user-attachments/assets/b67b0b04-0e55-4789-a4ba-7330d6a848d1)
+
+</details>
+
+
+<h2>Sprint Review</h2>
+
+- Sprint 2 generally focused on design changes, necessary frontend/backend coding, artificial intelligence coding, and AI integration. The process progressed slowly due to everyone's busy schedule, but overall, we maintained good communication to manage the process.
+
+
+<h2>Sprint Retrospective</h2>
+
+- The user interface design was reviewed on Figma; sections to be updated (e.g., Home Page, History Page) were identified.
+
 
 </details>
 
