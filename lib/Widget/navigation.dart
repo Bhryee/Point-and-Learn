@@ -4,6 +4,7 @@ import 'package:point_and_learn/screen/camera_education.dart';
 import 'package:point_and_learn/screen/home_education.dart';
 import 'package:point_and_learn/screen/sentence_education.dart';
 import 'package:point_and_learn/screen/settings.dart';
+import 'package:point_and_learn/screen/login.dart';
 
 class NavigationsScreen extends StatefulWidget {
   const NavigationsScreen({super.key});
@@ -31,8 +32,8 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
     _pages = [
       HomeEducationPage(),
       HomeEducationPage(),
-      HomeEducationPage(),
       SettingsPage(),
+      SignOutPage(),
     ];
   }
 
@@ -167,13 +168,13 @@ class _NavigationsScreenState extends State<NavigationsScreen> {
                   index: 1,
                 ),
                 _buildDrawerItem(
-                  icon: Icons.favorite,
-                  title: 'Favorites',
+                  icon: Icons.settings,
+                  title: 'Settings',
                   index: 2,
                 ),
                 _buildDrawerItem(
-                  icon: Icons.settings,
-                  title: 'Settings',
+                  icon: Icons.logout,
+                  title: 'Sign Out',
                   index: 3,
                 ),
               ],
