@@ -392,8 +392,12 @@ This distribution ensured a balanced and goal-oriented project management approa
 
 <h2>Sprint Retrospective</h2>
 
-- The user interface design was reviewed on Figma; sections to be updated (e.g., Home Page, History Page) were identified.
-
+- The menu page design was reviewed on Figma.
+- Updates were made to the frontend developed using Flutter.
+- Backend development was improved.
+- Visual dataset research/training continues on Roboflow and Kaggle platforms.
+- TensorFlow Lite work on the development of the artificial intelligence module has not begun.
+- Issues were encountered in the artificial intelligence coding and integration.
 
 </details>
 
